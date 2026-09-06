@@ -1,0 +1,3244 @@
+/* ==================== DESIGN SYSTEM ==================== */
+
+:root {
+
+    --background: #F5F1E8;
+    --surface: #FBF9F4;
+
+    --dark: #171717;
+    --text: #292929;
+    --muted: #77736C;
+
+    --accent: #A89268;
+
+    --border: #D8D1C4;
+
+}
+
+
+/* ==================== RESET ==================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    min-height: 100vh;
+}
+
+
+/* ==================== NAVBAR ==================== */
+
+/* ==================== NAVBAR ==================== */
+
+.navbar {
+
+    width: 100%;
+    min-height: 88px;
+
+    padding: 20px 6vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid rgba(216, 209, 196, 0.75);
+
+    background: rgba(245, 241, 232, 0.72);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* ---------- Logo ---------- */
+
+.logo {
+
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1.05;
+
+    position: relative;
+
+    padding-left: 16px;
+    text-decoration: none;
+}
+
+
+/* Small vertical gold line */
+
+.logo::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 2px;
+
+    width: 2px;
+    height: 30px;
+
+    background-color: var(--accent);
+}
+
+
+.logo span {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 18px;
+
+    letter-spacing: 2.5px;
+
+    color: var(--dark);
+
+    font-weight: 400;
+}
+
+
+.logo small {
+
+    margin-top: 7px;
+
+    font-size: 8px;
+
+    letter-spacing: 3.5px;
+
+    color: var(--muted);
+
+    text-transform: uppercase;
+}
+
+
+/* ---------- Navigation ---------- */
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 42px;
+}
+
+
+.nav-links a {
+
+    position: relative;
+
+    text-decoration: none;
+
+    color: var(--text);
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    letter-spacing: 1.4px;
+
+    text-transform: uppercase;
+
+    padding: 8px 0;
+
+    transition:
+        color 0.3s ease,
+        opacity 0.3s ease;
+}
+
+
+.nav-links a:hover {
+
+    color: var(--accent);
+}
+
+
+/* Gold underline */
+
+.nav-links a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -2px;
+
+    width: 0;
+    height: 1px;
+
+    background-color: var(--accent);
+
+    transform: translateX(-50%);
+
+    transition: width 0.3s ease;
+}
+
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+
+    width: 100%;
+}
+
+
+/* Active link */
+
+.nav-links a.active {
+
+    color: var(--dark);
+
+}
+
+
+/* ---------- Navbar Button ---------- */
+
+.nav-button {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 16px;
+
+    min-width: 116px;
+
+    padding: 13px 17px;
+
+    border: 1px solid var(--dark);
+
+    color: var(--dark);
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    background: transparent;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.nav-button span {
+
+    font-size: 17px;
+
+    line-height: 0;
+
+    transition: transform 0.3s ease;
+}
+
+
+.nav-button:hover {
+
+    background-color: var(--dark);
+
+    border-color: var(--dark);
+
+    color: var(--background);
+}
+
+
+.nav-button:hover span {
+
+    transform: translateX(4px);
+}
+
+
+/* ==================== HERO ==================== */
+
+.hero {
+
+    min-height: calc(100vh - 82px);
+
+    padding: 80px 6vw;
+
+    display: grid;
+
+    grid-template-columns: 1fr 0.85fr;
+
+    gap: 8vw;
+
+    align-items: center;
+}
+
+
+
+
+/* ---------- Hero Content ---------- */
+
+.hero-content {
+
+    max-width: 680px;
+}
+
+
+.eyebrow {
+
+    margin-bottom: 28px;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: var(--accent);
+
+    font-weight: 600;
+}
+
+
+.hero h1 {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(70px, 9vw, 140px);
+
+    line-height: 0.85;
+
+    font-weight: 400;
+
+    letter-spacing: -5px;
+
+    color: var(--dark);
+}
+
+
+.hero h1 em {
+
+    font-style: italic;
+
+    color: var(--accent);
+}
+
+
+.hero-role {
+
+    margin-top: 32px;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: var(--muted);
+}
+
+
+.hero-description {
+
+    max-width: 470px;
+
+    margin-top: 24px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 19px;
+
+    line-height: 1.65;
+
+    color: var(--text);
+}
+
+
+/* ---------- Primary Button ---------- */
+
+.primary-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-top: 38px;
+
+    padding: 16px 22px;
+
+    background-color: var(--dark);
+
+    color: var(--background);
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    transition: all 0.3s ease;
+}
+
+
+.primary-button span {
+
+    font-size: 18px;
+
+    transition: transform 0.3s ease;
+}
+
+
+.primary-button:hover {
+
+    background-color: var(--accent);
+
+}
+
+
+.primary-button:hover span {
+
+    transform: translateX(5px);
+}
+
+
+/* ==================== HERO IMAGE ==================== */
+
+.hero-image {
+
+    height: 650px;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+}
+
+
+/* Main portrait frame */
+
+.image-placeholder {
+
+    width: 88%;
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background-color: #DDD6C8;
+
+    border: 1px solid var(--border);
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    text-align: center;
+
+    line-height: 2;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* Decorative gold line */
+
+.image-placeholder::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 28px;
+
+    right: 28px;
+
+    width: 45px;
+
+    height: 1px;
+
+    background-color: var(--accent);
+
+}
+
+
+/* Decorative corner */
+
+.image-placeholder::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: 28px;
+
+    left: 28px;
+
+    width: 45px;
+
+    height: 1px;
+
+    background-color: var(--accent);
+
+}
+
+/* ==================== ABOUT ==================== */
+
+.about {
+
+    padding: 140px 6vw;
+
+    border-top: 1px solid var(--border);
+
+    display: grid;
+
+    grid-template-columns: 0.35fr 1fr;
+
+    gap: 8vw;
+}
+
+
+/* ---------- Section Label ---------- */
+
+.about-label {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+}
+
+
+.about-label span {
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    color: var(--accent);
+}
+
+
+.about-label p {
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: var(--muted);
+
+    font-weight: 600;
+}
+
+
+/* ---------- About Content ---------- */
+
+.about-content {
+
+    max-width: 780px;
+}
+
+
+.about-content h2 {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(42px, 5vw, 72px);
+
+    line-height: 1.05;
+
+    font-weight: 400;
+
+    letter-spacing: -2px;
+
+    color: var(--dark);
+}
+
+
+.about-content h2 em {
+
+    color: var(--accent);
+
+    font-style: italic;
+}
+
+
+.about-content > p {
+
+    max-width: 560px;
+
+    margin-top: 32px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    color: var(--muted);
+}
+
+
+/* ---------- Text Link ---------- */
+
+.text-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 38px;
+
+    padding-bottom: 8px;
+
+    border-bottom: 1px solid var(--dark);
+
+    text-decoration: none;
+
+    color: var(--dark);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    transition: color 0.3s ease;
+}
+
+
+.text-link span {
+
+    font-size: 17px;
+
+    transition: transform 0.3s ease;
+}
+
+
+.text-link:hover {
+
+    color: var(--accent);
+
+}
+
+
+.text-link:hover span {
+
+    transform: translateX(5px);
+}
+
+/* ==================== PRACTICE AREAS ==================== */
+
+.practice {
+
+    padding: 140px 6vw;
+
+    background-color: var(--surface);
+
+    border-top: 1px solid var(--border);
+
+}
+
+
+/* ---------- Practice Header ---------- */
+
+.practice-header {
+
+    display: grid;
+
+    grid-template-columns: 0.35fr 1fr;
+
+    gap: 8vw;
+
+    margin-bottom: 85px;
+
+}
+
+
+.section-label {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+}
+
+
+.section-label span {
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    color: var(--accent);
+
+}
+
+
+.section-label p {
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: var(--muted);
+
+    font-weight: 600;
+
+}
+
+
+.practice-intro {
+
+    max-width: 500px;
+
+}
+
+
+.practice-intro p {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 20px;
+
+    line-height: 1.6;
+
+    color: var(--muted);
+
+}
+
+
+/* ---------- Practice List ---------- */
+
+.practice-list {
+
+    border-top: 1px solid var(--border);
+
+}
+
+
+.practice-item {
+
+    min-height: 105px;
+
+    display: grid;
+
+    grid-template-columns: 80px 1fr 50px;
+
+    align-items: center;
+
+    gap: 25px;
+
+    border-bottom: 1px solid var(--border);
+
+    text-decoration: none;
+
+    color: var(--dark);
+
+    transition:
+        padding 0.35s ease,
+        background-color 0.35s ease;
+
+}
+
+
+.practice-number {
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    color: var(--accent);
+
+}
+
+
+.practice-item h3 {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(24px, 3vw, 38px);
+
+    font-weight: 400;
+
+    letter-spacing: -0.5px;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+.practice-arrow {
+
+    font-size: 22px;
+
+    color: var(--muted);
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+/* ---------- Practice Hover ---------- */
+
+.practice-item:hover {
+
+    padding-left: 18px;
+
+    padding-right: 18px;
+
+    background-color: rgba(216, 209, 196, 0.12);
+
+}
+
+
+.practice-item:hover h3 {
+
+    color: var(--accent);
+
+}
+
+
+.practice-item:hover .practice-arrow {
+
+    color: var(--accent);
+
+    transform: translate(4px, -4px);
+
+}
+
+
+/* ---------- Practice Footer ---------- */
+
+.practice-footer {
+
+    margin-top: 45px;
+
+}
+
+/* ==================== PROFESSIONAL APPROACH ==================== */
+
+.approach {
+
+    padding: 140px 6vw;
+
+    background-color: var(--background);
+
+    border-top: 1px solid var(--border);
+
+}
+
+
+/* ---------- Approach Header ---------- */
+
+.approach-header {
+
+    display: grid;
+
+    grid-template-columns: 0.35fr 1fr;
+
+    gap: 8vw;
+
+    margin-bottom: 90px;
+
+}
+
+
+.approach-heading {
+
+    max-width: 760px;
+
+}
+
+
+.approach-heading h2 {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(42px, 5vw, 72px);
+
+    line-height: 1.05;
+
+    font-weight: 400;
+
+    letter-spacing: -2px;
+
+    color: var(--dark);
+
+}
+
+
+.approach-heading h2 em {
+
+    color: var(--accent);
+
+    font-style: italic;
+
+}
+
+
+/* ---------- Approach Grid ---------- */
+
+.approach-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid var(--border);
+
+}
+
+
+.approach-item {
+
+    min-height: 310px;
+
+    padding: 32px 35px 35px 0;
+
+    border-right: 1px solid var(--border);
+
+}
+
+
+.approach-item:not(:first-child) {
+
+    padding-left: 35px;
+
+}
+
+
+.approach-item:last-child {
+
+    border-right: none;
+
+}
+
+
+/* ---------- Number ---------- */
+
+.approach-number {
+
+    display: block;
+
+    margin-bottom: 65px;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    color: var(--accent);
+
+}
+
+
+/* ---------- Heading ---------- */
+
+.approach-item h3 {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 34px;
+
+    font-weight: 400;
+
+    color: var(--dark);
+
+    margin-bottom: 18px;
+
+}
+
+
+/* ---------- Description ---------- */
+
+.approach-item p {
+
+    max-width: 280px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: var(--muted);
+
+}
+
+
+/* ---------- Hover ---------- */
+
+.approach-item h3 {
+
+    transition: color 0.3s ease;
+}
+
+
+.approach-item:hover h3 {
+
+    color: var(--accent);
+
+}
+
+/* ==================== CONTACT CTA ==================== */
+
+.contact-cta {
+
+    padding: 150px 6vw 160px;
+
+    background-color: var(--dark);
+
+    color: var(--background);
+
+    display: grid;
+
+    grid-template-columns: 0.35fr 1fr;
+
+    gap: 8vw;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* ---------- Decorative Gold Line ---------- */
+
+.contact-cta::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 6vw;
+
+    width: 90px;
+    height: 1px;
+
+    background-color: var(--accent);
+}
+
+
+/* ---------- Label ---------- */
+
+.cta-label {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+}
+
+
+.cta-label span {
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    color: var(--accent);
+}
+
+
+.cta-label p {
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #AAA59B;
+
+    font-weight: 600;
+}
+
+
+/* ---------- CTA Content ---------- */
+
+.cta-content {
+
+    max-width: 850px;
+}
+
+
+.cta-content h2 {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(50px, 6vw, 90px);
+
+    line-height: 1;
+
+    font-weight: 400;
+
+    letter-spacing: -3px;
+
+    color: var(--background);
+}
+
+
+.cta-content h2 em {
+
+    color: var(--accent);
+
+    font-style: italic;
+}
+
+
+/* ---------- CTA Description ---------- */
+
+.cta-content > p {
+
+    max-width: 500px;
+
+    margin-top: 32px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #AAA59B;
+}
+
+
+/* ---------- CTA Button ---------- */
+
+.cta-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-top: 42px;
+
+    padding: 17px 23px;
+
+    background-color: var(--background);
+
+    color: var(--dark);
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.cta-button span {
+
+    font-size: 18px;
+
+    transition: transform 0.3s ease;
+}
+
+
+.cta-button:hover {
+
+    background-color: var(--accent);
+
+    color: var(--dark);
+}
+
+
+.cta-button:hover span {
+
+    transform: translateX(5px);
+
+}
+
+
+/* ==================== FOOTER ==================== */
+
+.footer {
+
+    background-color: #1D1D1B;
+
+    color: var(--background);
+
+}
+
+
+/* ---------- Main Footer ---------- */
+
+.footer-main {
+
+    padding: 100px 6vw 90px;
+
+    display: grid;
+
+    grid-template-columns: 1.5fr 0.7fr 0.7fr;
+
+    gap: 8vw;
+
+    border-bottom: 1px solid rgba(216, 209, 196, 0.18);
+
+}
+
+
+/* ---------- Footer Brand ---------- */
+
+.footer-brand {
+
+    max-width: 430px;
+
+}
+
+
+.footer-logo {
+
+    display: flex;
+
+    flex-direction: column;
+
+    line-height: 1.05;
+
+    position: relative;
+
+    padding-left: 16px;
+
+}
+
+
+.footer-logo::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 2px;
+
+    width: 2px;
+    height: 31px;
+
+    background-color: var(--accent);
+
+}
+
+
+.footer-logo span {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 20px;
+
+    letter-spacing: 2.5px;
+
+    color: var(--background);
+
+}
+
+
+.footer-logo small {
+
+    margin-top: 7px;
+
+    font-size: 8px;
+
+    letter-spacing: 3.5px;
+
+    color: #AAA59B;
+
+}
+
+
+.footer-brand > p {
+
+    max-width: 360px;
+
+    margin-top: 35px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #AAA59B;
+
+}
+
+
+/* ---------- Footer Headings ---------- */
+
+.footer-heading {
+
+    margin-bottom: 25px;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: var(--accent);
+
+    font-weight: 600;
+
+}
+
+
+/* ---------- Footer Navigation ---------- */
+
+.footer-navigation {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+}
+
+
+.footer-navigation a {
+
+    margin-bottom: 13px;
+
+    color: var(--background);
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    transition: color 0.3s ease;
+
+}
+
+
+.footer-navigation a:hover {
+
+    color: var(--accent);
+
+}
+
+
+/* ---------- Footer Contact ---------- */
+
+.footer-contact {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+}
+
+
+.footer-contact > p:not(.footer-heading) {
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    color: #AAA59B;
+
+}
+
+
+.footer-contact a {
+
+    margin-top: 22px;
+
+    padding-bottom: 7px;
+
+    border-bottom: 1px solid var(--accent);
+
+    color: var(--background);
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    transition: color 0.3s ease;
+
+}
+
+
+.footer-contact a:hover {
+
+    color: var(--accent);
+
+}
+
+
+/* ---------- Footer Bottom ---------- */
+
+.footer-bottom {
+
+    min-height: 72px;
+
+    padding: 20px 6vw;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background-color: var(--background);
+
+    color: var(--muted);
+
+}
+
+
+.footer-bottom p {
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+}
+
+/* ==================== PROFILE PAGE ==================== */
+
+
+/* ---------- Profile Hero ---------- */
+
+.profile-hero {
+
+    padding: 120px 6vw 110px;
+
+    display: grid;
+
+    grid-template-columns: 0.35fr 1fr;
+
+    gap: 8vw;
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+.profile-label {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+}
+
+
+.profile-label span {
+
+    font-size: 10px;
+
+    color: var(--accent);
+
+    letter-spacing: 1px;
+}
+
+
+.profile-label p {
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: var(--muted);
+
+    font-weight: 600;
+}
+
+
+.profile-hero-content {
+
+    max-width: 900px;
+}
+
+
+.profile-hero-content h1 {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(55px, 7vw, 100px);
+
+    line-height: 0.95;
+
+    font-weight: 400;
+
+    letter-spacing: -3px;
+
+    color: var(--dark);
+}
+
+
+.profile-hero-content h1 em {
+
+    display: block;
+
+    color: var(--accent);
+
+    font-style: italic;
+}
+
+
+.profile-hero-content > p:last-child {
+
+    max-width: 560px;
+
+    margin-top: 35px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    color: var(--muted);
+}
+
+
+/* ---------- Profile Introduction ---------- */
+
+.profile-introduction {
+
+    padding: 140px 6vw;
+
+    display: grid;
+
+    grid-template-columns: 0.85fr 1fr;
+
+    gap: 10vw;
+
+    align-items: center;
+
+}
+
+
+.profile-photo {
+
+    height: 650px;
+}
+
+
+.profile-photo-placeholder {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background-color: #DDD6C8;
+
+    border: 1px solid var(--border);
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    line-height: 2;
+
+    text-align: center;
+}
+
+
+.profile-introduction-content {
+
+    max-width: 650px;
+}
+
+
+.section-small-label {
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: var(--accent);
+
+    font-weight: 600;
+}
+
+
+.profile-introduction-content h2 {
+
+    margin-top: 25px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(42px, 5vw, 68px);
+
+    line-height: 1.05;
+
+    font-weight: 400;
+
+    letter-spacing: -2px;
+
+    color: var(--dark);
+}
+
+
+.profile-introduction-content h2 em {
+
+    color: var(--accent);
+
+    font-style: italic;
+}
+
+
+.profile-introduction-content > p:not(.section-small-label) {
+
+    max-width: 550px;
+
+    margin-top: 30px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 17px;
+
+    line-height: 1.75;
+
+    color: var(--muted);
+}
+
+
+/* ---------- Information Sections ---------- */
+
+.profile-information {
+
+    padding: 120px 6vw;
+
+    background-color: var(--surface);
+
+    border-top: 1px solid var(--border);
+
+    display: grid;
+
+    grid-template-columns: 0.35fr 1fr;
+
+    gap: 8vw;
+}
+
+
+.profile-info-label {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+}
+
+
+.profile-info-label span {
+
+    font-size: 10px;
+
+    color: var(--accent);
+
+    letter-spacing: 1px;
+}
+
+
+.profile-info-label p {
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: var(--muted);
+
+    font-weight: 600;
+}
+
+
+.profile-info-content {
+
+    border-top: 1px solid var(--border);
+}
+
+
+.profile-info-row {
+
+    min-height: 85px;
+
+    padding: 20px 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.profile-info-row span {
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    color: var(--muted);
+}
+
+
+.profile-info-row strong {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 17px;
+
+    font-weight: 400;
+
+    color: var(--dark);
+
+    text-align: right;
+}
+
+
+.profile-education {
+
+    background-color: var(--background);
+
+}
+
+
+/* ---------- Courts & Practice ---------- */
+
+.profile-practice {
+
+    padding: 140px 6vw;
+
+    border-top: 1px solid var(--border);
+}
+
+
+.profile-practice-header {
+
+    display: grid;
+
+    grid-template-columns: 0.35fr 1fr;
+
+    gap: 8vw;
+
+    margin-bottom: 80px;
+}
+
+
+.profile-practice-header h2 {
+
+    max-width: 800px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(42px, 5vw, 70px);
+
+    line-height: 1.05;
+
+    font-weight: 400;
+
+    letter-spacing: -2px;
+
+    color: var(--dark);
+}
+
+
+.profile-practice-header h2 em {
+
+    color: var(--accent);
+
+    font-style: italic;
+}
+
+
+.court-list {
+
+    border-top: 1px solid var(--border);
+}
+
+
+.court-item {
+
+    min-height: 100px;
+
+    display: grid;
+
+    grid-template-columns: 80px 1fr;
+
+    align-items: center;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.court-item span {
+
+    font-size: 10px;
+
+    color: var(--accent);
+
+    letter-spacing: 1px;
+}
+
+
+.court-item p {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 22px;
+
+    color: var(--dark);
+}
+
+
+/* ---------- Values ---------- */
+
+.profile-values {
+
+    padding: 140px 6vw;
+
+    background-color: var(--surface);
+
+    border-top: 1px solid var(--border);
+
+    display: grid;
+
+    grid-template-columns: 0.35fr 1fr;
+
+    gap: 8vw;
+}
+
+
+.values-content {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid var(--border);
+}
+
+
+.value-item {
+
+    padding: 32px 30px 30px 0;
+
+    border-right: 1px solid var(--border);
+}
+
+
+.value-item:not(:first-child) {
+
+    padding-left: 30px;
+}
+
+
+.value-item:last-child {
+
+    border-right: none;
+}
+
+
+.value-item > span {
+
+    font-size: 10px;
+
+    color: var(--accent);
+
+    letter-spacing: 1px;
+}
+
+
+.value-item h3 {
+
+    margin-top: 65px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 32px;
+
+    font-weight: 400;
+
+    color: var(--dark);
+}
+
+
+.value-item p {
+
+    max-width: 240px;
+
+    margin-top: 18px;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    color: var(--muted);
+}
+
+
+/* ---------- Disclaimer ---------- */
+
+.profile-disclaimer {
+
+    padding: 120px 6vw;
+
+    display: grid;
+
+    grid-template-columns: 0.75fr 1fr;
+
+    gap: 10vw;
+
+    border-top: 1px solid var(--border);
+
+}
+
+
+.profile-disclaimer h2 {
+
+    margin-top: 25px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(40px, 5vw, 65px);
+
+    line-height: 1.05;
+
+    font-weight: 400;
+
+    letter-spacing: -2px;
+
+}
+
+
+.profile-disclaimer h2 em {
+
+    color: var(--accent);
+
+    font-style: italic;
+}
+
+
+.profile-disclaimer > p:last-child {
+
+    max-width: 600px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 17px;
+
+    line-height: 1.75;
+
+    color: var(--muted);
+
+}
+
+/* ==================== PRACTICE PAGE ==================== */
+
+
+/* ---------- Page Hero ---------- */
+
+.practice-page-hero {
+
+    padding: 120px 6vw 110px;
+
+    display: grid;
+
+    grid-template-columns: 0.35fr 1fr;
+
+    gap: 8vw;
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+.practice-page-label {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+}
+
+
+.practice-page-label span {
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    color: var(--accent);
+}
+
+
+.practice-page-label p {
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: var(--muted);
+
+    font-weight: 600;
+}
+
+
+.practice-page-heading {
+
+    max-width: 900px;
+}
+
+
+.practice-page-heading h1 {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(65px, 8vw, 120px);
+
+    line-height: 0.9;
+
+    font-weight: 400;
+
+    letter-spacing: -4px;
+
+    color: var(--dark);
+}
+
+
+.practice-page-heading h1 em {
+
+    display: block;
+
+    color: var(--accent);
+
+    font-style: italic;
+}
+
+
+.practice-page-heading > p:last-child {
+
+    max-width: 560px;
+
+    margin-top: 35px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    color: var(--muted);
+}
+
+
+/* ---------- Practice Introduction ---------- */
+
+.practice-page-intro {
+
+    padding: 140px 6vw;
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+.practice-page-intro h2 {
+
+    max-width: 900px;
+
+    margin-top: 25px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(45px, 5vw, 72px);
+
+    line-height: 1.05;
+
+    font-weight: 400;
+
+    letter-spacing: -2px;
+
+    color: var(--dark);
+}
+
+
+.practice-page-intro h2 em {
+
+    color: var(--accent);
+
+    font-style: italic;
+}
+
+
+.practice-page-intro > p:last-child {
+
+    max-width: 560px;
+
+    margin-top: 32px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: var(--muted);
+}
+
+
+/* ---------- Practice Detail ---------- */
+
+.practice-detail {
+
+    min-height: 520px;
+
+    padding: 100px 6vw;
+
+    display: grid;
+
+    grid-template-columns: 0.35fr 1fr;
+
+    gap: 8vw;
+
+    align-items: center;
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+.practice-detail-alt {
+
+    background-color: var(--surface);
+
+}
+
+
+.practice-detail-number {
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    color: var(--accent);
+
+}
+
+
+.practice-detail-content {
+
+    max-width: 800px;
+}
+
+
+.practice-detail-content h2 {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(45px, 6vw, 82px);
+
+    line-height: 1;
+
+    font-weight: 400;
+
+    letter-spacing: -3px;
+
+    color: var(--dark);
+}
+
+
+.practice-detail-content > p {
+
+    max-width: 540px;
+
+    margin-top: 30px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 18px;
+
+    line-height: 1.75;
+
+    color: var(--muted);
+}
+
+
+/* ---------- Practice Meta ---------- */
+
+.practice-detail-meta {
+
+    max-width: 540px;
+
+    margin-top: 55px;
+
+    padding-top: 15px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    border-top: 1px solid var(--border);
+}
+
+
+.practice-detail-meta span {
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: var(--muted);
+}
+
+/* =========================================
+   CONTACT PAGE
+========================================= */
+
+.contact-page-hero {
+    padding: 130px 6vw 150px;
+    display: grid;
+    grid-template-columns: .35fr 1fr;
+    gap: 8vw;
+    border-bottom: 1px solid var(--border);
+}
+
+.contact-page-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.contact-page-label span {
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--accent);
+}
+
+.contact-page-label p {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.contact-page-heading {
+    max-width: 900px;
+}
+
+.contact-eyebrow {
+    margin-bottom: 28px;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.contact-page-heading h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(65px, 8vw, 120px);
+    line-height: .9;
+    font-weight: 400;
+    letter-spacing: -4px;
+    color: var(--dark);
+}
+
+.contact-page-heading h1 em {
+    color: var(--accent);
+    font-style: italic;
+}
+
+.contact-page-description {
+    max-width: 560px;
+    margin-top: 38px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+
+/* =========================================
+   CONTACT MAIN
+========================================= */
+
+.contact-main {
+    padding: 140px 6vw;
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 10vw;
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.contact-information {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-info-content {
+    margin-top: 80px;
+    max-width: 500px;
+}
+
+.contact-info-content h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(40px, 4.5vw, 65px);
+    line-height: 1.05;
+    font-weight: 400;
+    letter-spacing: -2px;
+    color: var(--dark);
+}
+
+.contact-info-content h2 em {
+    color: var(--accent);
+    font-style: italic;
+}
+
+.contact-info-content > p {
+    margin-top: 30px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--muted);
+}
+
+.contact-details {
+    margin-top: 60px;
+    border-top: 1px solid var(--border);
+}
+
+.contact-detail {
+    padding: 23px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.contact-detail span {
+    display: block;
+    margin-bottom: 9px;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.contact-detail p {
+    font-size: 13px;
+    letter-spacing: .5px;
+    color: var(--text);
+}
+
+
+/* =========================================
+   CONTACT FORM
+========================================= */
+
+.contact-form-wrapper {
+    padding: 50px;
+    background-color: var(--background);
+    border: 1px solid var(--border);
+}
+
+.form-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding-bottom: 35px;
+    border-bottom: 1px solid var(--border);
+}
+
+.form-heading > span {
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--accent);
+}
+
+.form-heading p {
+    margin-bottom: 10px;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.form-heading h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 35px;
+    font-weight: 400;
+    color: var(--dark);
+}
+
+
+/* Form rows */
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.contact-form {
+    padding-top: 35px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 28px;
+}
+
+.form-group label {
+    margin-bottom: 11px;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--text);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 15px 0;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    outline: none;
+    background-color: transparent;
+    color: var(--dark);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    transition: border-color .3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #AAA59B;
+}
+
+.form-group select {
+    cursor: pointer;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+    line-height: 1.7;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-bottom-color: var(--accent);
+}
+
+
+/* Form note */
+
+.form-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    margin-top: 5px;
+    padding: 18px;
+    background-color: rgba(216, 209, 196, .18);
+}
+
+.form-note span {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    font-size: 10px;
+    color: var(--accent);
+}
+
+.form-note p {
+    font-size: 10px;
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+
+/* Submit button */
+
+.form-submit {
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 30px;
+    padding: 17px 23px;
+    border: 1px solid var(--dark);
+    background-color: var(--dark);
+    color: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color .3s ease,
+                color .3s ease,
+                border-color .3s ease;
+}
+
+.form-submit span {
+    font-size: 18px;
+    transition: transform .3s ease;
+}
+
+.form-submit:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: var(--dark);
+}
+
+.form-submit:hover span {
+    transform: translateX(5px);
+}
+
+
+/* =========================================
+   CONTACT DISCLAIMER
+========================================= */
+
+.contact-disclaimer {
+    padding: 120px 6vw;
+    display: grid;
+    grid-template-columns: .35fr 1fr;
+    gap: 8vw;
+    border-bottom: 1px solid var(--border);
+}
+
+.contact-disclaimer-content {
+    max-width: 760px;
+}
+
+.contact-disclaimer-content h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(40px, 5vw, 68px);
+    line-height: 1.05;
+    font-weight: 400;
+    letter-spacing: -2px;
+    color: var(--dark);
+}
+
+.contact-disclaimer-content h2 em {
+    color: var(--accent);
+    font-style: italic;
+}
+
+.contact-disclaimer-content p {
+    max-width: 600px;
+    margin-top: 30px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--muted);
+}
+
+/* =========================================
+   MOBILE MENU BUTTON
+========================================= */
+
+.menu-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 1px;
+    background-color: var(--dark);
+
+    transition:
+        transform .3s ease,
+        opacity .3s ease;
+}
+
+
+/* =========================================
+   MOBILE NAVIGATION
+========================================= */
+
+.mobile-menu {
+    display: none;
+}
+
+
+/* ==================== RESPONSIVE ==================== */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .navbar {
+        min-height: 76px;
+        padding: 18px 5vw;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .hero-image {
+        height: 500px;
+        order: -1;
+    }
+
+    .hero h1 {
+        font-size: clamp(65px, 18vw, 100px);
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 90px 5vw;
+    }
+
+        /* PRACTICE — MOBILE */
+
+    .practice {
+
+        padding: 90px 5vw;
+
+    }
+
+    .practice-header {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        margin-bottom: 55px;
+
+    }
+
+    .practice-item {
+
+        min-height: 90px;
+
+        grid-template-columns: 45px 1fr 30px;
+
+        gap: 15px;
+
+    }
+
+    .practice-item h3 {
+
+        font-size: 24px;
+
+    }
+
+    .practice-item:hover {
+
+        padding-left: 8px;
+
+        padding-right: 8px;
+
+    }
+
+        /* PROFESSIONAL APPROACH — MOBILE */
+
+    .approach {
+
+        padding: 90px 5vw;
+
+    }
+
+    .approach-header {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        margin-bottom: 55px;
+
+    }
+
+    .approach-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .approach-item {
+
+        min-height: auto;
+
+        padding: 35px 0;
+
+        border-right: none;
+
+        border-bottom: 1px solid var(--border);
+
+    }
+
+    .approach-item:not(:first-child) {
+
+        padding-left: 0;
+
+    }
+
+    .approach-item:last-child {
+
+        border-bottom: none;
+
+    }
+
+    .approach-number {
+
+        margin-bottom: 35px;
+
+    }
+
+    .approach-item h3 {
+
+        font-size: 30px;
+
+    }
+
+        /* CONTACT CTA — MOBILE */
+
+    .contact-cta {
+
+        padding: 90px 5vw 100px;
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+    }
+
+    .contact-cta::before {
+
+        left: 5vw;
+
+    }
+
+    .cta-content h2 {
+
+        font-size: clamp(45px, 12vw, 65px);
+
+        letter-spacing: -2px;
+
+    }
+
+    .cta-content > p {
+
+        font-size: 17px;
+
+    }
+
+        /* FOOTER — MOBILE */
+
+    .footer-main {
+
+        padding: 75px 5vw 65px;
+
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+
+    }
+
+    .footer-brand > p {
+
+        font-size: 16px;
+
+    }
+
+    .footer-bottom {
+
+        padding: 20px 5vw;
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+    }
+
+        /* PROFILE — MOBILE */
+
+    .profile-hero {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        padding: 90px 5vw 80px;
+
+    }
+
+
+    .profile-introduction {
+
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+
+        padding: 90px 5vw;
+
+    }
+
+
+    .profile-photo {
+
+        height: 500px;
+
+    }
+
+
+    .profile-information {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding: 90px 5vw;
+
+    }
+
+
+    .profile-info-row {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+    }
+
+
+    .profile-info-row strong {
+
+        text-align: left;
+
+    }
+
+
+    .profile-practice {
+
+        padding: 90px 5vw;
+
+    }
+
+
+    .profile-practice-header {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        margin-bottom: 55px;
+
+    }
+
+
+    .court-item {
+
+        grid-template-columns: 45px 1fr;
+
+        min-height: 90px;
+
+    }
+
+
+    .court-item p {
+
+        font-size: 19px;
+
+    }
+
+
+    .profile-values {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding: 90px 5vw;
+
+    }
+
+
+    .values-content {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .value-item {
+
+        padding: 35px 0;
+
+        border-right: none;
+
+        border-bottom: 1px solid var(--border);
+
+    }
+
+
+    .value-item:not(:first-child) {
+
+        padding-left: 0;
+
+    }
+
+
+    .value-item:last-child {
+
+        border-bottom: none;
+
+    }
+
+
+    .value-item h3 {
+
+        margin-top: 35px;
+
+    }
+
+
+    .profile-disclaimer {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding: 90px 5vw;
+
+    }
+
+        /* PRACTICE PAGE — MOBILE */
+
+    .practice-page-hero {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        padding: 90px 5vw 80px;
+
+    }
+
+
+    .practice-page-heading h1 {
+
+        font-size: clamp(60px, 17vw, 90px);
+
+        letter-spacing: -3px;
+
+    }
+
+
+    .practice-page-intro {
+
+        padding: 90px 5vw;
+
+    }
+
+
+    .practice-page-intro h2 {
+
+        font-size: clamp(40px, 11vw, 60px);
+
+    }
+
+
+    .practice-detail {
+
+        min-height: auto;
+
+        padding: 85px 5vw;
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+    }
+
+
+    .practice-detail-content h2 {
+
+        font-size: clamp(42px, 11vw, 65px);
+
+    }
+
+
+    .practice-detail-content > p {
+
+        font-size: 17px;
+
+    }
+
+
+    .practice-detail-meta {
+
+        margin-top: 40px;
+
+    }
+
+        /* CONTACT PAGE */
+
+    .contact-page-hero {
+        padding: 90px 5vw 100px;
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-page-heading h1 {
+        font-size: clamp(55px, 15vw, 85px);
+        letter-spacing: -3px;
+    }
+
+    .contact-page-description {
+        font-size: 17px;
+    }
+
+    .contact-main {
+        padding: 90px 5vw;
+        grid-template-columns: 1fr;
+        gap: 75px;
+    }
+
+    .contact-info-content {
+        margin-top: 50px;
+    }
+
+    .contact-info-content h2 {
+        font-size: clamp(40px, 11vw, 60px);
+    }
+
+    .contact-form-wrapper {
+        padding: 30px 22px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .form-heading h3 {
+        font-size: 30px;
+    }
+
+    .contact-disclaimer {
+        padding: 90px 5vw;
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-disclaimer-content h2 {
+        font-size: clamp(40px, 11vw, 60px);
+    }
+
+        .nav-button {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .mobile-menu {
+        position: fixed;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        padding: 30px 5vw 35px;
+
+        display: flex;
+        flex-direction: column;
+
+        background-color: rgba(245, 241, 232, 0.96);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+        border-bottom: 1px solid var(--border);
+
+        transform: translateY(-120%);
+        opacity: 0;
+        visibility: hidden;
+
+        transition:
+            transform .35s ease,
+            opacity .35s ease,
+            visibility .35s ease;
+
+        z-index: 99;
+    }
+
+    .mobile-menu.open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mobile-menu a {
+        padding: 17px 0;
+
+        border-bottom: 1px solid var(--border);
+
+        color: var(--dark);
+        text-decoration: none;
+
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+
+        transition: color .3s ease;
+    }
+
+    .mobile-menu a:last-child {
+        border-bottom: none;
+    }
+
+    .mobile-menu a:hover,
+    .mobile-menu a.active {
+        color: var(--accent);
+    }
+
+
+    /* Hamburger animation */
+
+    .menu-toggle.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .navbar {
+
+        padding: 20px 5vw;
+    }
+
+    .nav-button {
+        padding: 10px 13px;
+    }
+
+    .hero {
+
+        padding: 45px 5vw;
+    }
+
+    .hero-image {
+        height: 420px;
+    }
+
+    .hero h1 {
+
+        font-size: 65px;
+
+        letter-spacing: -3px;
+    }
+
+    .hero-description {
+        font-size: 17px;
+    }
+
+    .footer {
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+}

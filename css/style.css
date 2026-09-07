@@ -2643,6 +2643,285 @@ body {
     display: none;
 }
 
+/* =========================================
+   DISCLAIMER MODAL
+========================================= */
+
+.disclaimer-overlay {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background-color: rgba(23, 23, 23, 0.78);
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    z-index: 9999;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity .35s ease,
+        visibility .35s ease;
+}
+
+.disclaimer-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* Modal */
+
+.disclaimer-modal {
+    width: min(900px, 100%);
+    max-height: 90vh;
+
+    padding: 55px 65px;
+
+    overflow-y: auto;
+
+    background-color: var(--background);
+    border: 1px solid var(--border);
+
+    box-shadow: 0 25px 80px rgba(0, 0, 0, .25);
+
+    transform: translateY(20px);
+
+    transition: transform .4s ease;
+}
+
+.disclaimer-overlay.show .disclaimer-modal {
+    transform: translateY(0);
+}
+
+
+/* Logo / Mark */
+
+.disclaimer-mark {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--dark);
+
+    position: relative;
+}
+
+.disclaimer-mark::before {
+    content: "";
+
+    position: absolute;
+
+    top: -7px;
+    left: 7px;
+
+    width: 42px;
+    height: 1px;
+
+    background-color: var(--accent);
+}
+
+.disclaimer-mark span {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 15px;
+    letter-spacing: 2px;
+
+    color: var(--dark);
+}
+
+
+/* Heading */
+
+.disclaimer-eyebrow {
+    margin-bottom: 18px;
+
+    text-align: center;
+
+    font-size: 9px;
+    letter-spacing: 3px;
+
+    color: var(--accent);
+
+    font-weight: 600;
+}
+
+.disclaimer-modal h2 {
+    margin-bottom: 38px;
+
+    text-align: center;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(34px, 4vw, 52px);
+
+    line-height: 1;
+
+    font-weight: 400;
+
+    letter-spacing: -1.5px;
+
+    color: var(--dark);
+}
+
+.disclaimer-modal h2 em {
+    color: var(--accent);
+    font-style: italic;
+}
+
+
+/* Text */
+
+.disclaimer-text {
+    padding-top: 28px;
+
+    border-top: 1px solid var(--border);
+}
+
+.disclaimer-text p {
+    margin-bottom: 20px;
+
+    font-size: 13px;
+    line-height: 1.75;
+
+    color: var(--text);
+}
+
+.disclaimer-text p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Confirmation */
+
+.disclaimer-confirmation {
+    margin-top: 30px;
+
+    padding: 18px 20px;
+
+    background-color: rgba(216, 209, 196, .18);
+
+    border-left: 2px solid var(--accent);
+}
+
+.disclaimer-confirmation p {
+    font-size: 11px;
+    line-height: 1.65;
+
+    color: var(--muted);
+}
+
+
+/* Buttons */
+
+.disclaimer-actions {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 35px;
+}
+
+.disclaimer-button {
+    min-width: 135px;
+
+    padding: 15px 22px;
+
+    border: 1px solid var(--dark);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background-color .3s ease,
+        color .3s ease,
+        border-color .3s ease;
+}
+
+.disclaimer-button.agree {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+
+    background-color: var(--dark);
+
+    color: var(--background);
+}
+
+.disclaimer-button.agree span {
+    font-size: 17px;
+
+    transition: transform .3s ease;
+}
+
+.disclaimer-button.agree:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+
+    color: var(--dark);
+}
+
+.disclaimer-button.agree:hover span {
+    transform: translateX(5px);
+}
+
+.disclaimer-button.disagree {
+    background-color: transparent;
+
+    color: var(--dark);
+}
+
+.disclaimer-button.disagree:hover {
+    background-color: var(--dark);
+
+    color: var(--background);
+}
+
+
+/* Disagree message */
+
+.disclaimer-message {
+    text-align: center;
+
+    padding: 40px 10px 10px;
+}
+
+.disclaimer-message h2 {
+    margin-bottom: 20px;
+}
+
+.disclaimer-message p {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 18px;
+    line-height: 1.6;
+
+    color: var(--muted);
+}
 
 /* ==================== RESPONSIVE ==================== */
 
@@ -3198,6 +3477,63 @@ body {
 
     .menu-toggle.open span:nth-child(3) {
         transform: translateY(-7px) rotate(-45deg);
+    }
+
+        /* =========================================
+       DISCLAIMER MOBILE
+    ========================================= */
+
+    .disclaimer-overlay {
+        padding: 15px;
+    }
+
+    .disclaimer-modal {
+        max-height: 92vh;
+        padding: 35px 25px;
+    }
+
+    .disclaimer-mark {
+        width: 50px;
+        height: 50px;
+
+        margin-bottom: 20px;
+    }
+
+    .disclaimer-eyebrow {
+        font-size: 8px;
+        letter-spacing: 2px;
+        line-height: 1.6;
+    }
+
+    .disclaimer-modal h2 {
+        margin-bottom: 28px;
+
+        font-size: clamp(32px, 9vw, 45px);
+    }
+
+    .disclaimer-text p {
+        font-size: 12px;
+        line-height: 1.7;
+
+        margin-bottom: 17px;
+    }
+
+    .disclaimer-confirmation {
+        margin-top: 25px;
+        padding: 16px;
+    }
+
+    .disclaimer-confirmation p {
+        font-size: 10px;
+    }
+
+    .disclaimer-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .disclaimer-button {
+        width: 100%;
     }
 
 }

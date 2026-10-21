@@ -2564,6 +2564,26 @@ body {
     transform: translateX(5px);
 }
 
+.form-submit:disabled {
+    opacity: .65;
+    cursor: wait;
+}
+
+.form-status {
+    min-height: 1.5em;
+    margin-top: 16px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.form-status.success {
+    color: #2f6b43;
+}
+
+.form-status.error {
+    color: #a33b32;
+}
+
 
 /* =========================================
    CONTACT DISCLAIMER
